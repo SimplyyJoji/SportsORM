@@ -47,16 +47,27 @@ namespace SportsORM.Controllers
                 .Where(l => l.Name.Contains("Atlantic"))
                 .ToList();
                 ViewBag.DallasTeams = _context.Teams
-                .Where(l => l.TeamName.Contains("Dallas"))
+                .Where(l => l.Location.Contains("Dallas"))
                 .ToList();
-                ViewBag.Conference = _context.Leagues
-                .Where(l => l.Name.Contains("Conference"))
+                ViewBag.RaptorTeams = _context.Teams
+                .Where(l => l.TeamName.Contains("Raptors"))
                 .ToList();
-                ViewBag.Conference = _context.Leagues
-                .Where(l => l.Name.Contains("Conference"))
+                ViewBag.TheTeams = _context.Teams
+                .Where(l => l.Location.Contains("City"))
                 .ToList();
-                ViewBag.Conference = _context.Leagues
-                .Where(l => l.Name.Contains("Conference"))
+                ViewBag.TName = _context.Teams
+                .Where(l => l.TeamName.Contains("T"))
+                .ToList();
+                ViewBag.SortTeams = _context.Teams
+                .OrderBy(l => l.TeamName);
+                ViewBag.TName = _context.Teams
+                .Where(l => l.TeamName.Contains("T"))
+                .ToList();
+                ViewBag.TName = _context.Teams
+                .Where(l => l.TeamName.Contains("T"))
+                .ToList();
+                ViewBag.TName = _context.Teams
+                .Where(l => l.TeamName.Contains("T"))
                 .ToList();
 
             return View();
