@@ -228,11 +228,11 @@
                         <th>League Name</th>
                         <th>League Sport</th>
                     </tr>
-                    @foreach(var l in ViewBag.WomenLeagues)
+                    @foreach(var l in ViewBag.ReverseTeams)
                     {
                         <tr>
-                            <td>@l.Name</td>
-                            <td>@l.Sport</td>
+                            <td>@l.Location</td>
+                            <td>@l.TeamName</td>
                         </tr>
                     }
                 </table>
@@ -248,11 +248,71 @@
                         <th>League Name</th>
                         <th>League Sport</th>
                     </tr>
-                    @foreach(var l in ViewBag.WomenLeagues)
+                    @foreach(var l in ViewBag.LocateCooper)
                     {
                         <tr>
-                            <td>@l.Name</td>
-                            <td>@l.Sport</td>
+                            <td>@l.FirstName</td>
+                            <td>@l.LastName</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>All Baseball Leagues</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                        <th>League Sport</th>
+                    </tr>
+                    @foreach(var l in ViewBag.OnlyJoshua)
+                    {
+                        <tr>
+                            <td>@l.FirstName</td>
+                            <td>@l.LastName</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>All Baseball Leagues</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                        <th>League Sport</th>
+                    </tr>
+                    @foreach(var l in ViewBag.NoJoshua)
+                    {
+                        <tr>
+                            <td>@l.FirstName</td>
+                            <td>@l.LastName</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>All Baseball Leagues</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                        <th>League Sport</th>
+                    </tr>
+                    @foreach(var l in ViewBag.AorW)
+                    {
+                        <tr>
+                            <td>@l.FirstName</td>
+                            <td>@l.LastName</td>
                         </tr>
                     }
                 </table>

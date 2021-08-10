@@ -31,6 +31,7 @@ namespace SportsORM.Controllers
         [HttpGet("level_1")]
         public IActionResult Level1()
         {   
+            //SORT BY LEAGUE
                 ViewBag.WomenLeagues = _context.Leagues
                 .Where(l => l.Name.Contains("Womens"))
                 .ToList();
@@ -45,6 +46,7 @@ namespace SportsORM.Controllers
                 .ToList();
                 ViewBag.Atlantic = _context.Leagues
                 .Where(l => l.Name.Contains("Atlantic"))
+                //SORT BY TEAMS
                 .ToList();
                 ViewBag.DallasTeams = _context.Teams
                 .Where(l => l.Location.Contains("Dallas"))
@@ -59,15 +61,22 @@ namespace SportsORM.Controllers
                 .Where(l => l.TeamName.Contains("T"))
                 .ToList();
                 ViewBag.SortTeams = _context.Teams
-                .OrderBy(l => l.TeamName);
-                ViewBag.TName = _context.Teams
-                .Where(l => l.TeamName.Contains("T"))
+                .OrderBy(l => l.Location);
+                ViewBag.ReverseTeams = _context.Teams
+                .OrderByDescending(l => l.TeamName);
+
+                //SORT BY PLAYER
+                ViewBag.LocateCooper = _context.Players
+                .Where(l => l.LastName.Contains("Cooper"))
                 .ToList();
-                ViewBag.TName = _context.Teams
-                .Where(l => l.TeamName.Contains("T"))
+                ViewBag.OnlyJoshua = _context.Players
+                .Where(l => l.FirstName.Contains("Joshua"))
                 .ToList();
-                ViewBag.TName = _context.Teams
-                .Where(l => l.TeamName.Contains("T"))
+                ViewBag.NoJoshua = _context.Players
+                .Where(l => l.LastName.Contains("Cooper") || l.FirstName != "Joshua")
+                .ToList();
+                ViewBag.AorW = _context.Players
+                .Where(l => l.FirstName.Contains("Alexander") || l.FirstName == "Wyatt")
                 .ToList();
 
             return View();
